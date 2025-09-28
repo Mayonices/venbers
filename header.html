@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        body{
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom left,#FF7474,#7237DF);
+        }
+
+        nav{
+            background: linear-gradient(to right,#d6a4ff, #b3e5fc);
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            gap: 150px;
+            padding: 10px;
+            border-radius: 50px;
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+        nav a{
+            font-family: 'Irish Grover', cursive;
+            font-size: 24px;
+            color: #6b0f0f; /* merah cokelat */
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #ff0000; /* merah terang pas hover */
+            transform: scale(1.1);
+        }
+
+            /* 🔹 Responsif Tablet */
+    @media (max-width: 768px) {
+      nav {
+        gap: 50px;          /* jarak lebih kecil */
+        max-width: 90%;     /* supaya tidak kepotong */
+      }
+      nav a {
+        font-size: 22px;
+      }
+    }
+
+    /* 🔹 Responsif HP */
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;  /* link turun ke bawah */
+        gap: 20px;
+        border-radius: 20px;
+      }
+      nav a {
+        font-size: 20px;
+      }
+    }
+    
+    </style>
+
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="vacation.html">Vacation</a>
+            <a href="other.html">Other</a>
+        </nav>
+    </header>
+
+</body>
+</html>
