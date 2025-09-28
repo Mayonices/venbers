@@ -9,91 +9,52 @@
   
     <style>
 
-body{
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(to bottom left,#FF7474,#7237DF);
-        }
-
-        nav{
-            background: linear-gradient(to right,#d6a4ff, #b3e5fc);
+        main{
             display: flex;
-            justify-content:center;
+            flex-direction: column;
             align-items: center;
-            gap: 150px;
-            padding: 10px;
-            border-radius: 50px;
-            margin-top: 0px;
-            margin-left: 200px;
-            margin-right: 200px;
-        }
-        nav a{
-            font-family: 'Irish Grover', cursive;
-            font-size: 28px;
-            color: #6b0f0f; /* merah cokelat */
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: #ff0000; /* merah terang pas hover */
-            transform: scale(1.1);
-        }
-
-
-        main {
-            display: flex;
-            align-items: center;
-            gap: 50px;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            text-align: center;
             color: white;
-            font-family: 'Irish Grover',cursive;
-            
         }
-        main div{
-            max-width: 580px;
-            line-height: 1.6;
-            text-align: justify;
-        }
-        main img{
+
+        img{
             border: 4px solid white;
             border-radius: 30px;
-            margin-top: 50px;
-            margin-left: 200px;
+            max-width: 100%;
+            height: auto;
         }
-
-
-        footer{
-            background: linear-gradient(to right, red,white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-            border-radius: 0px;
-        
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        
     </style>
+
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="vacation.html">Vacation</a>
-            <a href="other.html">Other</a>
-        </nav>
-    </header>
+
+    <div id="header"></div>
 
     <main>
+        <img src="foto/ketua.jpg.png" alt="poto" width="200">
+        <div>
+            <h1>Leader</h1>
+            <h3> MASIH DALAM TAHAP PEMBANGUNAN</h3>
+        </div>
 
     </main>
-<h1> ON PROGRESS</h1>
-    <footer>
-        <a href="#" onclick="window.location.href='https://www.instagram.com/venberss_/'">Instagram</a>
-    </footer>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+      fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+
 </body>
 
 </html>

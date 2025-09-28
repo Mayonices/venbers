@@ -9,81 +9,58 @@
   
     <style>
 
-        body{
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(to bottom left,#FF7474,#7237DF);
-        }     
-
-        nav{
-            background: linear-gradient(to right,#d6a4ff, #b3e5fc);
+        main{
             display: flex;
-            justify-content:center;
-            align-items: center;
-            gap: 150px;
-            padding: 10px;
-            border-radius: 50px;
-            margin-top: 0px;
-            margin-left: 200px;
-            margin-right: 200px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 40px;
         }
-
-        nav a{
-            font-family: 'Irish Grover', cursive;
-            font-size: 28px;
-            color: #6b0f0f; /* merah cokelat */
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff0000; /* merah terang pas hover */
-            transform: scale(1.1);
-        }
-
         main img{
             border: 4px solid white;
             border-radius: 30px;
-            margin-top: 50px;
-            margin-left: 197px;
-            margin-top: 90px;
+            max-width: 100%;
+            height: auto;
 
         }
-        footer{
-            background: linear-gradient(to right, red,white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-            border-radius: 0px;
+
         
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-
+        /* 🔹 Tablet */
+        @media (max-width: 768px) {
+        main img {
+            width: 180px;
         }
+        }
+
+        /* 🔹 HP */
+        @media (max-width: 480px) {
+        main img {
+            width: 100%;   /* foto full lebar di HP */
+            max-width: 300px; /* tapi dibatasi supaya gak kepanjangan */
+        }
+        }
+
     </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="vacation.html">Vacation</a>
-            <a href="other.html">Other</a>
-        </nav>
-    </header>
-
+    <div id="header"></div>
     <main>
         <img src="foto/pantai.jpg.jpg" alt="foto" width="200">
         <img src="foto/ombak.jpg.jpg" alt="foto" width="200">
         <img src="foto/cafe.jpg.jpg" alt="foto" width="200">
     </main>
+    <div id="footer"></div>
 
-    <footer>
-        <a href="#" onclick="window.location.href='https://www.instagram.com/venberss_/'">Instagram</a>
-    </footer>
+    <script>
+        fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+      fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
 </body>
 
 </html>
